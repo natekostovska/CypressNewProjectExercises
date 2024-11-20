@@ -5,17 +5,7 @@ describe('Computer database Website Tests', () => {
     let computerUsername=faker.internet.username()
     let introducedDate=faker.date.past(1) // Generates a random date from the past 1 year
     let discontinuedDate=faker.date.future(2) // Generates a random date from the future 2 years
-    let computerDataDrivenList;
-    
-    // Load the fixture file before tests
-  before(() => {
-    cy.fixture('fixtures/addingComputerDataDriven.json').then((data) => {
-        console.log(data)
-      // Store the loaded data to use later in the tests
-      computerDataDrivenList = data;
-    });
-  });
-
+  
     beforeEach(() => {
         // Visit the page before each test
         cy.visit('https://computer-database.gatling.io/computers');
