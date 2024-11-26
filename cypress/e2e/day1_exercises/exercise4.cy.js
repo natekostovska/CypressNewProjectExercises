@@ -1,6 +1,6 @@
 
 describe('Computer database Website Tests', () => {
-    const computerDataList=require('/Users/natasha.kostovska/Desktop/CypressNewProject/cypress/fixtures/addingComputerDataDriven.json');
+    const computerDataList=require('../../fixtures/addingComputerDataDriven.json');
     
  
 
