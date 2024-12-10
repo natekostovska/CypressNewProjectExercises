@@ -6,7 +6,11 @@ class computerDatabasePage {
         discontinuedTxt : () => cy.get('#discontinued'),
         companyDropdown : () => cy.get('#company'),
         submitBtn : () => cy.get('[type=submit]'),
-        warningMsg : () => cy.get('.warning')
+        warningMsg : () => cy.get('.warning'),
+        searchBox: () => cy.get('#searchbox'),
+        searchSubmit: () => cy.get('#searchsubmit'),
+        rowCount: () => cy.get('table.computers tbody tr'),
+        getMessage: () => cy.get('#main')
     }
     addComputer() {
         this.elements.addBtn().click()
@@ -25,6 +29,18 @@ class computerDatabasePage {
     }
     createComputer() {
         this.elements.submitBtn().click()
+    }
+    sendSearchText(){
+        this.elements.searchBox().type('ACE')
+    }
+    searchComputers(){
+        this.elements.searchSubmit().click()
+    }
+    lengthOfRowCount(lengthOfRows){
+        this.elements.rowCount().should('have.length', lengthOfRows)
+    }
+    message(){
+        this.elements.getMessage().should('contain.text', 'computers found')
     }
 }
  
